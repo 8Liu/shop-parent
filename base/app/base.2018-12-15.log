@@ -1,0 +1,52 @@
+2018-12-15 10:46:21.146 [main] INFO  com.liudehuang.MemberServer - No active profile set, falling back to default profiles: default
+2018-12-15 10:46:27.786 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2018-12-15 10:46:27.790 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2018-12-15 10:46:28.052 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-12-15 10:46:33.032 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-12-15 10:46:33.033 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-12-15 10:46:33.041 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2018-12-15 10:46:33.041 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-12-15 10:46:33.643 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2018-12-15 10:46:34.533 [main] INFO  com.netflix.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2018-12-15 10:46:34.533 [main] INFO  com.netflix.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2018-12-15 10:46:34.709 [main] INFO  com.netflix.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2018-12-15 10:46:34.709 [main] INFO  com.netflix.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2018-12-15 10:46:35.124 [main] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2018-12-15 10:46:35.656 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2018-12-15 10:46:35.657 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2018-12-15 10:46:35.657 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2018-12-15 10:46:35.657 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2018-12-15 10:46:35.657 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2018-12-15 10:46:35.657 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2018-12-15 10:46:35.657 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2018-12-15 10:46:36.177 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2018-12-15 10:46:36.179 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2018-12-15 10:46:36.182 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-12-15 10:46:36.187 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1544841996187 with initial instances count: 0
+2018-12-15 10:46:36.222 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1544841996222, current=UP, previous=STARTING]
+2018-12-15 10:46:36.225 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_MEMBER/DESKTOP-1V8MVDI.mshome.net:member:8762: registering service...
+2018-12-15 10:46:36.447 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8762"]
+2018-12-15 10:46:36.501 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8762"]
+2018-12-15 10:46:36.514 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_MEMBER/DESKTOP-1V8MVDI.mshome.net:member:8762 - registration status: 204
+2018-12-15 10:46:36.530 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-12-15 10:46:36.581 [main] INFO  com.liudehuang.MemberServer - Started MemberServer in 19.217 seconds (JVM running for 23.136)
+2018-12-15 10:46:38.515 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.BrokerService - Loaded the Bouncy Castle security provider.
+2018-12-15 10:46:38.660 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.BrokerService - Using Persistence Adapter: MemoryPersistenceAdapter
+2018-12-15 10:46:38.691 [JMX connector] INFO  org.apache.activemq.broker.jmx.ManagementContext - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2018-12-15 10:46:38.830 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.14.5 (localhost, ID:DESKTOP-1V8MVDI-62570-1544841998686-0:1) is starting
+2018-12-15 10:46:38.836 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.14.5 (localhost, ID:DESKTOP-1V8MVDI-62570-1544841998686-0:1) started
+2018-12-15 10:46:38.836 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.BrokerService - For help or more information please see: http://activemq.apache.org
+2018-12-15 10:46:38.842 [RMI TCP Connection(9)-127.0.0.1] WARN  org.apache.activemq.broker.BrokerService - Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: D:\公司工作空间\shop-parent only has 16131 mb of usable space. - resetting to maximum available disk space: 16131 mb
+2018-12-15 10:46:38.904 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.TransportConnector - Connector vm://localhost started
+2018-12-15 10:46:38.975 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.TransportConnector - Connector vm://localhost stopped
+2018-12-15 10:46:38.976 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.14.5 (localhost, ID:DESKTOP-1V8MVDI-62570-1544841998686-0:1) is shutting down
+2018-12-15 10:46:38.991 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.14.5 (localhost, ID:DESKTOP-1V8MVDI-62570-1544841998686-0:1) uptime 0.396 seconds
+2018-12-15 10:46:38.991 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.activemq.broker.BrokerService - Apache ActiveMQ 5.14.5 (localhost, ID:DESKTOP-1V8MVDI-62570-1544841998686-0:1) is shutdown
+2018-12-15 10:47:06.180 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2018-12-15 10:47:06.180 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2018-12-15 10:47:06.181 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2018-12-15 10:47:06.181 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2018-12-15 10:47:06.181 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2018-12-15 10:47:06.181 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2018-12-15 10:47:06.181 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2018-12-15 10:47:06.231 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
