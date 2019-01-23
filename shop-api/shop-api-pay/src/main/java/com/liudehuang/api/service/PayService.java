@@ -20,10 +20,26 @@ public interface PayService {
     ResponseBase createToken(@RequestBody PaymentInfo paymentInfo);
 
     /**
-     * 使用支付令牌查找支付信息
+     * 使用支付令牌查找支付信息（网页端支付form表单）
      * @param payToken
      * @return
      */
-    @RequestMapping("/findPayToken")
-    ResponseBase findPayToken(@RequestParam("payToken") String payToken);
+    @RequestMapping("/aliPagePay")
+    ResponseBase aliPagePay(@RequestParam("payToken") String payToken);
+
+    /**
+     * 支付宝扫码支付
+     * @param payToken
+     * @return
+     */
+    @RequestMapping("/aliQrPay")
+    ResponseBase aliQrPay(@RequestParam("payToken") String payToken);
+
+    /**
+     * 支付宝安卓端Pay
+     * @param payToken
+     * @return
+     */
+    @RequestMapping("/aliAppPay")
+    ResponseBase aliAppPay(@RequestParam("payToken") String payToken);
 }

@@ -23,5 +23,5 @@ public interface PaymentInfoDao {
 	public PaymentInfo getByOrderIdPayInfo(@Param("orderId") String orderId);
 
 	@Update("update payment_info set state =#{state},payMessage=#{payMessage},platformorderId=#{platformorderId},updated=#{updated} where orderId=#{orderId} ")
-	public void updatePayInfo(PaymentInfo paymentInfo);
+	public int updatePayInfo(PaymentInfo paymentInfo);
 }

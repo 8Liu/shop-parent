@@ -11,5 +11,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/order")
 public interface OrderService {
     @RequestMapping("/updateOrder")
-    ResponseBase updateOrder(@RequestParam("payState") Long payState, @RequestParam("payId") String payId, @RequestParam("orderNumber") String orderNumber);
+    ResponseBase updateOrder(@RequestParam("isPay") Long isPay, @RequestParam("payId") String payId, @RequestParam("orderNumber") String orderNumber);
 }

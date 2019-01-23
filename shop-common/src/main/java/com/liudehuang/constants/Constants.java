@@ -42,6 +42,16 @@ public interface Constants {
     String PAY_TOEKN = "PAY_TOKEN";
 
     /**
+     * 支付失败
+     */
+    String PAY_FAIL = "FAIL";
+
+    /**
+     * 支付成功
+     */
+    String PAY_SUCCESS = "SUCCESS";
+
+    /**
      *  COOKIE 会员token名称
      */
     String COOKIE_MEMBER_TOKEN = "COOKIE_MEMBER_TOKEN";

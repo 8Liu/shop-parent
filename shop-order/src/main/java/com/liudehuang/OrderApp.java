@@ -3,17 +3,15 @@ package com.liudehuang;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 /**
  * @author liudehuang
- * @date 2019/1/14 17:30
+ * @date 2019/1/16 17:17
  */
-@EnableFeignClients
 @EnableEurekaClient
 @SpringBootApplication
-public class PayApp {
+public class OrderApp {
     public static void main(String[] args) {
-        SpringApplication.run(PayApp.class,args);
+        SpringApplication.run(OrderApp.class,args);
     }
 }
