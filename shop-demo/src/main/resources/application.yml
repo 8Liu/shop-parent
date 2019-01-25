@@ -1,0 +1,40 @@
+server:
+  port: 8770
+#  context-path: /member
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: demo
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    pool:
+      min-idle: 1
+      max-idle: 8
+    database: 0
+  #数据库连接信息
+  datasource:
+    name: test
+    url: jdbc:mysql://127.0.0.1:3306/shop-demo
+    username: root
+    password:
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20

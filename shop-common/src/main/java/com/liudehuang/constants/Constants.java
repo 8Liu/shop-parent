@@ -57,6 +57,11 @@ public interface Constants {
     String COOKIE_MEMBER_TOKEN = "COOKIE_MEMBER_TOKEN";
 
     /**
+     * form表单token前缀
+     */
+    String FORM_COMMIT_TOKEN = "FORM_COMMIT_TOKEN";
+
+    /**
      * token过期时间
      */
     Long TOKEN_MEMBER_TIME = 60*60*24*90L;
@@ -70,5 +75,16 @@ public interface Constants {
      * cookie
      */
     int COOKIE_TOKEN_MEMBER_TIME = 60*60*24*90;
-
+    /**
+     * form表单提交token过期时间
+     */
+    Long FORM_COMMIT_TOKEN_TIME = 60*60L;
+    /**
+     * token放在请求头
+     */
+    String EXTAPIHEAD = "head";
+    /**
+     * token放在form表单中
+     */
+    String EXTAPIFROM = "from";
 }

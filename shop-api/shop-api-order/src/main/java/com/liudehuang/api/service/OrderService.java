@@ -1,6 +1,8 @@
 package com.liudehuang.api.service;
 
 import com.liudehuang.base.ResponseBase;
+import com.liudehuang.entity.OrderEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,4 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface OrderService {
     @RequestMapping("/updateOrder")
     ResponseBase updateOrder(@RequestParam("isPay") Long isPay, @RequestParam("payId") String payId, @RequestParam("orderNumber") String orderNumber);
+
+
 }

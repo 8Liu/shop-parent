@@ -19,6 +19,7 @@
         <module>shop-weixin</module>
         <module>shop-pay</module>
         <module>shop-order</module>
+        <module>shop-demo</module>
     </modules>
 
 
