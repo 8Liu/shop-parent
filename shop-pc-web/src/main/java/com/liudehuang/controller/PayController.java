@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class PayController {
             return;
         }
         //2、调用支付服务接口，获取支付宝html元素
-        ResponseBase payTokenResult = payServiceFeign.findPayToken(payToken);
+        ResponseBase payTokenResult = payServiceFeign.aliPagePay(payToken);
         if(!payTokenResult.getCode().equals(Constants.HTTP_RES_CODE_200)){
             String message = payTokenResult.getMsg();
             writer.print(message);
@@ -49,4 +50,17 @@ public class PayController {
         writer.close();
 
     }
+
+    @ResponseBody
+    @RequestMapping("/aliQrPay")
+    public ResponseBase aliQrPay(String payToken){
+        return payServiceFeign.aliQrPay(payToken);
+    }
+
+    @ResponseBody
+    @RequestMapping("/aliAppPay")
+    public ResponseBase aliAppPay(String payToken){
+        return payServiceFeign.aliAppPay(payToken);
+    }
+
 }

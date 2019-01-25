@@ -3,10 +3,12 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-api/shop-api-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-api/shop-api-member" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-api/shop-api-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-api/shop-api-pay" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-eurekaserver" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-member" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-message" charset="UTF-8" />

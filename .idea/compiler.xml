@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shopapidemo" />
         <module name="shopapimember" />
         <module name="shopapiorder" />
         <module name="shopapipay" />
         <module name="shopcommon" />
+        <module name="shopdemo" />
         <module name="shopeurekaserver" />
         <module name="shopmember" />
         <module name="shopmessage" />
