@@ -51,6 +51,33 @@ public class PayController {
 
     }
 
+
+    @RequestMapping("/weiXinPagePay")
+    public void weiXinPagePay(String payToken, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter writer = response.getWriter();
+        //1、参数验证
+        if(StringUtils.isEmpty(payToken)){
+            return;
+        }
+        //2、调用支付服务接口，获取支付宝html元素
+        ResponseBase payTokenResult = payServiceFeign.weiXinPagePay(payToken);
+        if(!payTokenResult.getCode().equals(Constants.HTTP_RES_CODE_200)){
+            String message = payTokenResult.getMsg();
+            writer.print(message);
+            return;
+        }
+
+        //3、返回可以执行的html元素给客户端
+        LinkedHashMap map = (LinkedHashMap) payTokenResult.getData();
+        String weixin_web_url = (String)map.get("weixin_web_url");
+        log.info("weixin_web_url:{}",weixin_web_url);
+        //4、页面上渲染出form表单
+        writer.write(weixin_web_url);
+        writer.close();
+
+    }
+
     @ResponseBody
     @RequestMapping("/aliQrPay")
     public ResponseBase aliQrPay(String payToken){
@@ -63,4 +90,9 @@ public class PayController {
         return payServiceFeign.aliAppPay(payToken);
     }
 
+    @ResponseBody
+    @RequestMapping("/weiXinQrPay")
+    public ResponseBase weiXinQrPay(String payToken){
+        return payServiceFeign.weiXinQrPay(payToken);
+    }
 }

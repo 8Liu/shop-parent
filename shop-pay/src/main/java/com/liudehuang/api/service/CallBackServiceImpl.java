@@ -2,7 +2,7 @@ package com.liudehuang.api.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.internal.util.AlipaySignature;
-import com.liudehuang.alipay.config.AlipayConfig;
+import com.liudehuang.config.AlipayConfig;
 import com.liudehuang.base.BaseApiService;
 import com.liudehuang.base.ResponseBase;
 import com.liudehuang.constants.Constants;
@@ -122,12 +122,13 @@ public class CallBackServiceImpl extends BaseApiService implements CallBackServi
                 return Constants.PAY_FAIL;
             }
             //调用订单数据库通知支付状态
-            ResponseBase responseBase = orderServiceFeign.updateOrder(1L, tradeNo, outTradeNo);
+            //改成mq
+          /*  ResponseBase responseBase = orderServiceFeign.updateOrder(1L, tradeNo, outTradeNo);
             if(!responseBase.getCode().equals(Constants.HTTP_RES_CODE_200)){
                 //回滚 手动回滚事务
                 TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
                 return Constants.PAY_FAIL;
-            }
+            }*/
             //手动事务提交
             return Constants.PAY_SUCCESS;
         }catch (Exception e){

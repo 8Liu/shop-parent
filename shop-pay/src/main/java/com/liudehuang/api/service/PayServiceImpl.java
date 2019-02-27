@@ -1,7 +1,6 @@
 package com.liudehuang.api.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.request.AlipayTradeAppPayRequest;
@@ -10,7 +9,11 @@ import com.alipay.api.request.AlipayTradePrecreateRequest;
 import com.alipay.api.response.AlipayTradeAppPayResponse;
 import com.alipay.api.response.AlipayTradePagePayResponse;
 import com.alipay.api.response.AlipayTradePrecreateResponse;
-import com.liudehuang.alipay.config.AlipayConfig;
+import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderRequest;
+import com.github.binarywang.wxpay.bean.result.WxPayUnifiedOrderResult;
+import com.github.binarywang.wxpay.exception.WxPayException;
+import com.github.binarywang.wxpay.service.WxPayService;
+import com.liudehuang.config.AlipayConfig;
 import com.liudehuang.base.BaseApiService;
 import com.liudehuang.base.BaseRedisService;
 import com.liudehuang.base.ResponseBase;
@@ -38,6 +41,9 @@ public class PayServiceImpl extends BaseApiService implements PayService {
 
     @Autowired
     private BaseRedisService baseRedisService;
+
+    @Autowired
+    private WxPayService wxPayService;
     /**
      * 创建支付令牌
      * @return
@@ -267,6 +273,92 @@ public class PayServiceImpl extends BaseApiService implements PayService {
             log.info("body:{}",body);
             return setResultSuccess(body);
         }catch (Exception e){
+            return setResultError("支付异常");
+        }
+
+    }
+
+    @Override
+    public ResponseBase weiXinPagePay(String payToken) {
+        //1、校验参数
+        if(StringUtils.isEmpty(payToken)){
+            return setResultError("token不能为空");
+        }
+        //2、判断token有效期
+        String payId = (String)baseRedisService.getString(payToken);
+        if(StringUtils.isEmpty(payId)){
+            return setResultError("支付已经超时");
+        }
+        //4、使用支付id,进行下单
+        //5、使用支付id查询支付信息
+        PaymentInfo paymentInfo = paymentInfoDao.getPaymentInfo(Long.parseLong(payId));
+        if(paymentInfo==null){
+            return setResultError("未找到支付信息");
+        }
+        //创建微信统一下单请求
+        WxPayUnifiedOrderRequest request = new WxPayUnifiedOrderRequest();
+        String body = "qq会员充值";
+        //付款金额，必填,企业金额，单位:分
+        Long total_amount = paymentInfo.getPrice();
+        request.setBody(body);
+        request.setNotifyUrl("http://183.246.86.117:10009/djpay/weixin/getwxasynmsg.do");
+        //设置订单号
+        request.setOutTradeNo(paymentInfo.getOrderId());
+        //设置产品ID
+        request.setProductId(paymentInfo.getOrderId());
+        request.setTotalFee(total_amount.intValue());
+        request.setSpbillCreateIp("183.246.86.117");
+        request.setTradeType("MWEB");
+        try {
+            WxPayUnifiedOrderResult result = wxPayService.unifiedOrder(request);
+            log.info("result:"+result);
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("weixin_web_url",result.getMwebUrl());
+            return setResultSuccess(jsonObject);
+        } catch (WxPayException e) {
+            e.printStackTrace();
+            return setResultError("支付异常");
+        }
+    }
+
+    @Override
+    public ResponseBase weiXinQrPay(@RequestParam("payToken") String payToken){
+        //1、校验参数
+        if(StringUtils.isEmpty(payToken)){
+            return setResultError("token不能为空");
+        }
+        //2、判断token有效期
+        String payId = (String)baseRedisService.getString(payToken);
+        if(StringUtils.isEmpty(payId)){
+            return setResultError("支付已经超时");
+        }
+        //4、使用支付id,进行下单
+        //5、使用支付id查询支付信息
+        PaymentInfo paymentInfo = paymentInfoDao.getPaymentInfo(Long.parseLong(payId));
+        if(paymentInfo==null){
+            return setResultError("未找到支付信息");
+        }
+        //创建微信统一下单请求
+        WxPayUnifiedOrderRequest request = new WxPayUnifiedOrderRequest();
+        String body = "qq会员充值";
+        //付款金额，必填,企业金额，单位:分
+        Long total_amount = paymentInfo.getPrice();
+        request.setBody(body);
+        request.setNotifyUrl("http://183.246.86.117:10009/djpay/weixin/getwxasynmsg.do");
+        //设置订单号
+        request.setOutTradeNo(paymentInfo.getOrderId());
+        //设置产品ID
+        request.setProductId(paymentInfo.getOrderId());
+        request.setTotalFee(total_amount.intValue());
+        request.setSpbillCreateIp("183.246.86.117");
+        request.setTradeType("NATIVE");
+
+        try {
+            WxPayUnifiedOrderResult result = wxPayService.unifiedOrder(request);
+            log.info("result:"+result);
+            return setResultSuccess(result.getCodeURL());
+        } catch (WxPayException e) {
+            e.printStackTrace();
             return setResultError("支付异常");
         }
 

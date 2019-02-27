@@ -42,4 +42,10 @@ public interface PayService {
      */
     @RequestMapping("/aliAppPay")
     ResponseBase aliAppPay(@RequestParam("payToken") String payToken);
+
+    @RequestMapping("/weiXinPagePay")
+    ResponseBase weiXinPagePay(@RequestParam("payToken")String payToken);
+
+    @RequestMapping("/weiXinQrPay")
+    ResponseBase weiXinQrPay(@RequestParam("payToken") String payToken);
 }

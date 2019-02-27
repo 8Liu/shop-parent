@@ -10,7 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shop-pay</artifactId>
-
+    <properties>
+        <weixin-java-pay.version>3.3.0</weixin-java-pay.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.liudehuang</groupId>
@@ -40,6 +42,16 @@
             <groupId>com.github.1991wangliang</groupId>
             <artifactId>alipay-sdk</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-pay</artifactId>
+            <version>${weixin-java-pay.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.10</version>
         </dependency>
     </dependencies>
 </project>
