@@ -308,7 +308,7 @@ public class PayServiceImpl extends BaseApiService implements PayService {
         request.setProductId(paymentInfo.getOrderId());
         request.setTotalFee(total_amount.intValue());
         request.setSpbillCreateIp("183.246.86.117");
-        request.setTradeType("MWEB");
+        request.setTradeType("NATIVE");
         try {
             WxPayUnifiedOrderResult result = wxPayService.unifiedOrder(request);
             log.info("result:"+result);
