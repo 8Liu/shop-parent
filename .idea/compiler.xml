@@ -6,6 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shop-api-demo" />
+        <module name="shop-api-member" />
+        <module name="shop-api-order" />
+        <module name="shop-api-pay" />
+        <module name="shop-common" />
+        <module name="shop-demo" />
+        <module name="shop-eurekaserver" />
+        <module name="shop-member" />
+        <module name="shop-message" />
+        <module name="shop-order" />
+        <module name="shop-pay" />
+        <module name="shop-pc-web" />
+        <module name="shop-weixin" />
         <module name="shopapidemo" />
         <module name="shopapimember" />
         <module name="shopapiorder" />
@@ -22,6 +35,20 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="shop-api-demo" target="1.8" />
+      <module name="shop-api-member" target="1.8" />
+      <module name="shop-api-order" target="1.8" />
+      <module name="shop-api-pay" target="1.8" />
+      <module name="shop-common" target="1.8" />
+      <module name="shop-demo" target="1.8" />
+      <module name="shop-eurekaserver" target="1.8" />
+      <module name="shop-member" target="1.8" />
+      <module name="shop-message" target="1.8" />
+      <module name="shop-order" target="1.8" />
+      <module name="shop-parent" target="1.8" />
+      <module name="shop-pay" target="1.8" />
+      <module name="shop-pc-web" target="1.8" />
+      <module name="shop-weixin" target="1.8" />
       <module name="shopapi" target="1.8" />
     </bytecodeTargetLevel>
   </component>
