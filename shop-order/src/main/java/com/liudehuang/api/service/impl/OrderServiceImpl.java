@@ -7,6 +7,7 @@ import com.liudehuang.dao.OrderDao;
 import com.liudehuang.entity.OrderEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,15 +21,28 @@ public class OrderServiceImpl extends BaseApiService implements OrderService {
     @Autowired
     private OrderDao orderDao;
 
+
+
     @Override
-    public ResponseBase updateOrder(@RequestParam("isPay") Long isPay, @RequestParam("payId") String aliPayId,
-                                          @RequestParam("orderNumber") String orderNumber) {
-        int updateOrder = orderDao.updateOrder(isPay, aliPayId, orderNumber);
-        if (updateOrder <= 0) {
+    public ResponseBase updateOrder(@RequestBody OrderEntity orderEntity) {
+        int row = orderDao.updateOrder(orderEntity);
+        if(row<=0){
             return setResultError("系统错误!");
         }
         return setResultSuccess();
     }
 
+    @Override
+    public ResponseBase createOrder(@RequestBody OrderEntity orderEntity) {
+        int row = orderDao.insertOrder(orderEntity);
+        if(row<=0){
+            return setResultError("系统错误!");
+        }
+        return setResultSuccess();
+    }
 
+    @Override
+    public ResponseBase orderService() {
+        return setResultSuccess("我是订单服务");
+    }
 }

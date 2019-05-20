@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/order")
 public interface OrderService {
     @RequestMapping("/updateOrder")
-    ResponseBase updateOrder(@RequestParam("isPay") Long isPay, @RequestParam("payId") String payId, @RequestParam("orderNumber") String orderNumber);
+    ResponseBase updateOrder(@RequestBody OrderEntity orderEntity);
 
+    @RequestMapping("/createOrder")
+    ResponseBase createOrder(@RequestBody OrderEntity orderEntity);
 
+    @RequestMapping("/orderService")
+    ResponseBase orderService();
 }

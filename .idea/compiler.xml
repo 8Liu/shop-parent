@@ -10,6 +10,8 @@
         <module name="shopapimember" />
         <module name="shopapiorder" />
         <module name="shopapipay" />
+        <module name="shopapipaymessage" />
+        <module name="shopappmessage" />
         <module name="shopcommon" />
         <module name="shopdemo" />
         <module name="shopeurekaserver" />
@@ -17,8 +19,11 @@
         <module name="shopmessage" />
         <module name="shoporder" />
         <module name="shoppay" />
+        <module name="shoppaymessage" />
         <module name="shoppcweb" />
+        <module name="shopswagger" />
         <module name="shopweixin" />
+        <module name="shopzuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

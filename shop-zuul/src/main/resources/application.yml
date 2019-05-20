@@ -1,0 +1,22 @@
+server:
+  port: 8887
+#  context-path: /member
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+####网关名称
+spring:
+  application:
+    name: zuul
+zuul:
+  routes:
+    api-member:
+      ##当客户端发送请求127.0.0.1:80/api-member开头的都会转发到会员服务
+      path: /api-member/**
+      ###会员服务名称 zuul网关默认整合了ribbon网关，自动实现负载均衡效果
+      serviceId: member
+    api-order:
+      path: /api-order/**
+      serviceId: order
+

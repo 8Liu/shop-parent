@@ -20,6 +20,10 @@
         <module>shop-pay</module>
         <module>shop-order</module>
         <module>shop-demo</module>
+        <module>shop-pay-message</module>
+        <module>shop-app-message</module>
+        <module>shop-zuul</module>
+        <module>shop-swagger</module>
     </modules>
 
 

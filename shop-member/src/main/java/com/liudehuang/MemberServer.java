@@ -1,5 +1,6 @@
 package com.liudehuang;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.ResourceBanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ import org.springframework.core.io.ClassPathResource;
  */
 @SpringBootApplication
 @EnableEurekaClient
+@EnableSwagger2Doc
 public class MemberServer {
     public static void main(String[] args) {
 

@@ -1,0 +1,10 @@
+server:
+  port: 8790
+
+spring:
+  application:
+    name: swagger
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

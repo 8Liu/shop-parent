@@ -7,6 +7,8 @@
     <file url="file://$PROJECT_DIR$/shop-api/shop-api-member" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-api/shop-api-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-api/shop-api-pay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-api/shop-api-pay-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-app-message" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-eurekaserver" charset="UTF-8" />
@@ -14,7 +16,10 @@
     <file url="file://$PROJECT_DIR$/shop-message" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-pay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-pay-message" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-pc-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-swagger" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-weixin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-zuul" charset="UTF-8" />
   </component>
 </project>

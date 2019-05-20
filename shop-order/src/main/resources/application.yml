@@ -18,6 +18,12 @@ spring:
       max-active: 1000
       max-wait: -1
   #数据库连接信息
+
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+      enabled: false
   datasource:
     name: test
     url: jdbc:mysql://127.0.0.1:3306/order-info

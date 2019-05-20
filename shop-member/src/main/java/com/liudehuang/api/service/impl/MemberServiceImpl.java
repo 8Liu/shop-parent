@@ -11,6 +11,9 @@ import com.liudehuang.entity.UserEntity;
 import com.liudehuang.mq.RegisterMailboxProducer;
 import com.liudehuang.util.MD5Utils;
 import com.liudehuang.util.TokenUtils;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +41,11 @@ public class MemberServiceImpl extends BaseApiService implements MemberService {
 
     @Value("${messages.queue}")
     private String MESSAGESQUEUE;
+
+    @ApiOperation("根据userId查询用户信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name="userId",value = "用户id",required = true,dataType = "int")
+    })
     @Override
     public ResponseBase findUserById(Integer userId) {
         UserEntity user = memberDao.findByID(userId);
@@ -231,6 +239,11 @@ public class MemberServiceImpl extends BaseApiService implements MemberService {
             return setResultError("微信账号关联失败");
         }
         return responseBase;
+    }
+
+    @Override
+    public ResponseBase memberService() {
+        return setResultSuccess("我是会员服务");
     }
 
     /**

@@ -2,6 +2,9 @@ package com.liudehuang.api.service;
 
 import com.liudehuang.base.ResponseBase;
 import com.liudehuang.entity.UserEntity;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +19,10 @@ public interface MemberService {
      * 使用userId查找用户的信息
      * @return
      */
+    @ApiOperation("使用userId查找用户的信息")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "userId",value = "用户id",required = true,dataType = "int")
+    )
     @RequestMapping("/findUserById")
     ResponseBase findUserById(Integer userId);
 
@@ -71,4 +78,11 @@ public interface MemberService {
      */
     @RequestMapping("/wxLogin")
     ResponseBase wxLogin(@RequestBody UserEntity user);
+
+    /**
+     * 测试
+     * @return
+     */
+    @RequestMapping("/memberService")
+    ResponseBase memberService();
 }

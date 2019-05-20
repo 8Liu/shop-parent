@@ -47,3 +47,6 @@ spring:
 ##队列
 messages:
   queue: message_queue
+swagger:
+  base-package: com.liudehuang.api
+###swagger配置

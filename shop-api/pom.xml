@@ -16,6 +16,7 @@
         <module>shop-api-pay</module>
         <module>shop-api-order</module>
         <module>shop-api-demo</module>
+        <module>shop-api-pay-message</module>
     </modules>
 
 
